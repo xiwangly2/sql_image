@@ -40,8 +40,8 @@ $conn = new mysqli($host,$sqlusername,$password,$dbname);
 if($conn->connect_error){
 	die("连接失败: " . $conn->connect_error);
 }
-$sql = "SELECT name,type,id,bin FROM $tablename";
-$conn->query($sql);
+//$sql = "SELECT name,type,id,bin FROM $tablename";
+//$conn->query($sql);
 $bin = mysqli_escape_string($conn,$img);
 if(!isset($bin) || $bin == ''){
 	die('error');

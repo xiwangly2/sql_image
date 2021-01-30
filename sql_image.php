@@ -55,7 +55,7 @@ $ci = $rowcount + '1';
 //$conn->query($sql);
 $sql = "INSERT INTO $tablename (name,type,id,bin)VALUES (\"{$filename}\",\"{$mime}\",\"{$ci}\",\"{$bin}\")";
 $conn->query($sql);
-echo($filename.' OK');
 $conn->close();
+echo($filename.' OK');
 @unlink("{$uuid}imgdata.bin");
 ?>

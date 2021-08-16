@@ -14,38 +14,7 @@ $sql_type = $rows["type"];
 $sql_bin = $rows["bin"];
 $sql_info = @getimagesize($sql_bin);
 $sql_mime = $sql_info["mime"];
-if($mime == "image/png")
-{
-	header("Content-Type:image/png");
-}
-elseif($mime == "image/jpeg")
-{
-	header("Content-Type:image/jpeg");
-}
-elseif($mime == "image/gif")
-{
-	header("Content-Type:image/gif");
-}
-elseif($mime == "image/vnd.wap.wbmp")
-{
-	header("Content-Type:image/vnd.wap.wbmp");
-}
-elseif($mime == "image/x-xbitmap")
-{
-	header("Content-Type:image/x-xbitmap");
-}
-elseif($mime == "image/webp")
-{
-	header("Content-Type:image/webp");
-}
-elseif($mime == "image/bmp")
-{
-	header("Content-Type:image/bmp");
-}
-else
-{
-	header("Content-Type:image/png");
-}
+@header("Content-Type:$sql_mime");
 $conn->close();
 echo($sql_bin);
 ?>
